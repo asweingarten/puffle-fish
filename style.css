@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  flex-flow: column;
+}
+
+.cell {
+  margin: 5px auto;
+
+  width: 600px;
+  border: 1px dashed cyan;
+  border-radius: 3px;
+}
+
+
+#grid {
+  display: grid;
+  height: 500px;
+}
+
+#grid div {
+  border: 1px solid gray;
+}
+
+.grid-cell {
+
+}
