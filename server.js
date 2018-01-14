@@ -47,4 +47,5 @@ app.put('/change/:action', (req, res) => {
     default:
       break;
   }
+  res.end(`Action ${req.params.action} taken`);
 })

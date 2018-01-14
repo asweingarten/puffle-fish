@@ -26,6 +26,7 @@ function commitChanges() {
 function prependCodeChanges(changes) {
   const codeChangeCell = document.createElement('div');
   codeChangeCell.classList.add('cell');
+  codeChangeCell.id = 'code-changes';
   codeChangeCell.innerHTML = `
     <h2>${changes.changeSummary}</h2>
     <pre>${changes.codeChanges}</pre>
@@ -41,9 +42,10 @@ function actOnChanges(action) {
     method: 'PUT', // or 'PUT'
     headers: new Headers({
     })
-  }).then(res => res.json())
+  }).then(res => res)
   .catch(error => console.error('Error:', error))
   .then(response => {
     console.log('Success:', response)
+    document.querySelector('#code-changes').remove()
   });
 }
