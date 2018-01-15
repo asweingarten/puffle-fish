@@ -1,17 +1,10 @@
-function commitChanges() {
+function commitChanges(changes) {
   console.log('yo');
   var url = '/style';
-  var data = {
-    selector: `#flat-bottom-pan`,
-    styles: [
-      `margin: 0 auto`,
-      `display: block`
-    ]
-  };
 
   fetch(url, {
     method: 'POST', // or 'PUT'
-    body: JSON.stringify(data),
+    body: JSON.stringify(changes),
     headers: new Headers({
       'Content-Type': 'application/json'
     })

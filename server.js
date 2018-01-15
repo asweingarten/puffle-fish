@@ -14,11 +14,13 @@ app.use(bodyParser.json())
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
-let codeChanges = {};
+let codeChanges = {}; // @TODO: Need to support batch changes
 app.post('/style', (req, res) => {
   console.log(req.body);
-  const payload = `\n${req.body.selector} {
-  ${req.body.styles.join(';\n  ')}\n}`
+  const styleUpdate = req.body[0]; // @TODO: Need to support batch changes
+
+  const payload = `\n${styleUpdate.selector} {
+  ${styleUpdate.styles.join(';\n  ')}\n}`
 
   FS.appendFileSync('./style.css', payload);
 
