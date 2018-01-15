@@ -38,3 +38,9 @@ body {
 .grid-cell {
 
 }
+
+#flat-bottom-pan {
+  width: 50%;
+  margin: 0 auto;
+  display: block
+}
