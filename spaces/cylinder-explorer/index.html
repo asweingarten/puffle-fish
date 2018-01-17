@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="../_shared/style.css">
+  <link rel="stylesheet" href="./cylinder.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <script src="../_shared/commitChanges.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="contextual-assistance">
+    <button>Situate</button>
+    <button id="commit-code" onclick="commitChanges(changes)">Commit Changes</button>
+  </div>
+  <div id="cells">
+    <div class="cell">
+      <h3>CSS Cylinders</h3>
+      <p>Sometimes we want to use shapes to demonstrate inherently visual concepts such as holes drilled into a surface.</p>
+      <p>We're going to steal </p>
+    </div>
+    <div class="cell">
+      <div id="cylinder">&nbsp;</div>
+    </div>
+
+    <div class="cell">
+      <h2>HTML</h2>
+      <pre> &lt;div&gt;&amp;nbsp;&lt;/div&gt; </pre>
+    </div>
+    <div class="cell">
+      <h2>HTML</h2>
+      <pre> &lt;div&gt;&amp;nbsp;&lt;/div&gt; </pre>
+    </div>
+    <div class="cell">
+      <h2>CSS</h2>
+      <pre>
+#cylinder {
+    height: 200px;
+    width: 200px;
+    border: solid 5px black;
+    background: #159;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 1em;
+    position: relative;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    font-size: 2em;
+    transform: rotate(45deg);
+    box-shadow: 0 0 5px black, 1px 1px 5px red, 2px 2px 5px green, 3px 3px 5px red;
+}
+      </pre>
+    </div>
+    <div class="cell">
+      <h2>JS</h2>
+      <pre>
+function generateBoxShadow(steps, width, color) {
+    var r = '';
+
+    for(var i=0;i<=steps;i++) {
+        if(i !== 0) {
+            r += ', ';
+        }
+        r += i + 'px ' + i + 'px ' + width + ' ' + color;
+    }
+    return r;
+}
+
+document.querySelector('#cylinder').style.boxShadow = generateBoxShadow(100, '1px', 'black');
+      </pre>
+    </div>
+  </div>
+
+
+</body>
+
+<script src="../_shared/voice-commands.js" charset="utf-8"></script>
+<script src="./generateBoxShadow.js" charset="utf-8"></script>
+<script>
+  document.querySelector('#cylinder').style.boxShadow = generateBoxShadow(100, '1px', 'black');
+</script>

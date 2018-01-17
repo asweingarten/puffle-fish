@@ -1,0 +1,16 @@
+#cylinder {
+    height: 200px;
+    width: 200px;
+    border: solid 5px black;
+    background: #159;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 1em;
+    position: relative;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    font-size: 2em;
+    transform: rotate(45deg);
+    box-shadow: 0 0 5px black, 1px 1px 5px red, 2px 2px 5px green, 3px 3px 5px red;
+}

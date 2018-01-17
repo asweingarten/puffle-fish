@@ -1,46 +1,9 @@
-body {
-  display: grid;
-  grid-template-rows: 1fr 8fr;
-  grid-template-columns: 1fr;
-  grid-row-gap: 1vmin;
-  height: 100vh;
-  margin: 0;
-}
-
-#contextual-assistance {
-  border: 1px dashed pink;
-}
-
-#cells {
+#spaces {
   display: flex;
-  flex-flow: column;
-  overflow-y: scroll;
+  flex-flow: row wrap;
 }
 
-.cell {
-  margin: 5px auto;
-
-  width: 600px;
-  border: 1px dashed cyan;
-  border-radius: 3px;
-}
-
-
-#grid {
-  display: grid;
-  height: 500px;
-}
-
-#grid div {
-  border: 1px solid gray;
-}
-
-.grid-cell {
-
-}
-
-#flat-bottom-pan {
-  width: 50%;
-  margin: 0 auto;
-  display: block
+.space {
+  width: 300px;
+  height: 200px;
 }

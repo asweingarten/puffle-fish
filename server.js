@@ -51,3 +51,17 @@ app.put('/change/:action', (req, res) => {
   }
   res.end(`Action ${req.params.action} taken`);
 })
+
+const { join } = require('path')
+app.get('/spaces', (req, res) => {
+
+  const isDirectory = source => FS.lstatSync(source).isDirectory()
+
+  const getDirectories = source =>
+    FS.readdirSync(source).map(name => join(source, name)).filter(isDirectory)
+
+  // @TODO: filter based on whether the last directory contains an underscore
+  const spaceDirectories = getDirectories('./spaces').filter(d => !d.includes('_'));
+
+  res.end(JSON.stringify(spaceDirectories));
+})
