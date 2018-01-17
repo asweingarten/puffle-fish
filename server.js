@@ -65,3 +65,10 @@ app.get('/spaces', (req, res) => {
 
   res.end(JSON.stringify(spaceDirectories));
 })
+
+app.put('/spaces', (req, res) => {
+  console.log(`Creating space: ${req.body.name}`);
+  FS.mkdirSync(`./spaces/${req.body.name}`);
+  FS.copyFileSync('./spaces/_template/index.html', `./spaces/${req.body.name}/index.html`);
+  res.end(JSON.stringify({}));
+});
