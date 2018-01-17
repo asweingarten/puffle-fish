@@ -36,7 +36,7 @@ if (annyang) {
       // selection.style.margin = `0 auto`;
       // selection.style.display = `block`;
     },
-    'commit changes': () => commitChanges(changes);
+    'commit changes': () => commitChanges(changes)
   };
 
   // Add our commands to annyang
