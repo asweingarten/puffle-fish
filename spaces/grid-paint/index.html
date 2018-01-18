@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="../_shared/style.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <script src="../_shared/commitChanges.js" charset="utf-8"></script>
+  <script src="../_shared/saveCells.js" charset="utf-8"></script>
+  <script src="../_shared/hydrateSpace.js" charset="utf-8"></script>
+
+  <!-- Create a simple CodeMirror instance -->
+  <link rel="stylesheet" href="../_shared/codemirror-5.33.0/lib/codemirror.css">
+  <script src="../_shared/codemirror-5.33.0/lib/codemirror.js"></script>
+  <script src="../_shared/codemirror-5.33.0/mode/javascript/javascript.js"></script>
+
+  <script src="./space.js" charset="utf-8"></script>
+
+  <script>
+
+    function refresh(savedCells) {
+      cells.innerHTML = '';
+      savedCells.forEach(c => {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.innerHTML = c;
+        cells.appendChild(cell);
+      })
+    }
+
+  </script>
+</head>
+
+<body>
+  <div id="contextual-assistance">
+    <button>Situate</button>
+    <button id="commit-code" onclick="commitChanges(changes)">Commit Changes</button>
+    <button onclick="saveCells(savedCells)">Save</button>
+    <button onclick="hydrateNotebook()">Hydrate</button>
+    <button onclick="refresh(savedCells)">Refresh</button>
+  </div>
+
+  <div id="cells">
+    <div class="cell">
+      <h2>Hi</h2>
+      <textarea id="test-code" name="cell-body" rows="8" cols="80"></textarea>
+      <button onclick="eval(document.querySelector('#test-code').value); createGrid(document.querySelector('#test-output'))">Execute</button>
+      <div id="test-output" class="cell-output"></div>
+    </div>
+  </div>
+
+</body>
+<script src="../_shared/voice-commands.js" charset="utf-8"></script>
+<script>
+
+</script>
+<script>
+  var editor = CodeMirror.fromTextArea(document.querySelector('#test-code'), {
+    lineNumbers: true,
+    mode: 'javascript',
+    lineWrapping: true
+  });
+
+  let savedCells = [];
+</script>

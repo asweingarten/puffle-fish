@@ -19,9 +19,9 @@ body {
 
 .cell {
   margin: 5px auto;
-
   width: 600px;
   border: 1px dashed cyan;
+  /* height: fit-content; */
   border-radius: 3px;
 }
 

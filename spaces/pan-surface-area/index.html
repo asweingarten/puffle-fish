@@ -4,12 +4,16 @@
   <link rel="stylesheet" href="../_shared/style.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   <script src="../_shared/commitChanges.js" charset="utf-8"></script>
+  <script src="../_shared/saveCells.js" charset="utf-8"></script>
+  <script src="../_shared/hydrateSpace.js" charset="utf-8"></script>
 </head>
 
 <body>
   <div id="contextual-assistance">
     <button>Situate</button>
     <button id="commit-code" onclick="commitChanges(changes)">Commit Changes</button>
+    <button onclick="saveCells(savedCells)">Save</button>
+    <button onclick="hydrateNotebook()">Hydrate</button>
   </div>
   <div id="cells">
     <div class="cell">
@@ -19,17 +23,16 @@
         <img id="flat-bottom-pan" src="./images/flat-bottom-pan.jpg" alt="">
       </div>
     </div>
+
     <div class="cell">
-      <div id="grid"></div>
+      <!-- <div id="grid"></div> -->
     </div>
+
     <div class="cell">
       On a perfectly flat surface, we can compute the surface area by multiplying the width and height.
       <pre>surface area = width * height</pre>
       If we start drilling cylindrical holes into this surface the equation becomes more nuanced.
       <pre>surface area = width * height + surface area of the walls of the hole </pre>
-
-
-
     </div>
   </div>
 
@@ -40,5 +43,5 @@
 <script src="../_shared/voice-commands.js" charset="utf-8"></script>
 <script>
 const flatBottomPanImg = document.getElementById('flat-bottom-pan');
-
+let savedCells = [];
 </script>

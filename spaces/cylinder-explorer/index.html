@@ -5,12 +5,16 @@
   <link rel="stylesheet" href="./cylinder.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   <script src="../_shared/commitChanges.js" charset="utf-8"></script>
+  <script src="../_shared/saveCells.js" charset="utf-8"></script>
+  <script src="../_shared/hydrateSpace.js" charset="utf-8"></script>
 </head>
 
 <body>
   <div id="contextual-assistance">
     <button>Situate</button>
     <button id="commit-code" onclick="commitChanges(changes)">Commit Changes</button>
+    <button onclick="saveCells(savedCells)">Save</button>
+    <button onclick="hydrateNotebook()">Hydrate</button>
   </div>
   <div id="cells">
     <div class="cell">
@@ -78,4 +82,5 @@ document.querySelector('#cylinder').style.boxShadow = generateBoxShadow(100, '1p
 <script src="./generateBoxShadow.js" charset="utf-8"></script>
 <script>
   document.querySelector('#cylinder').style.boxShadow = generateBoxShadow(100, '1px', 'black');
+  let savedCells = [];
 </script>

@@ -4,9 +4,18 @@
   <link rel="stylesheet" href="../_shared/style.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   <script src="../_shared/commitChanges.js" charset="utf-8"></script>
+  <script src="../_shared/saveCells.js" charset="utf-8"></script>
+  <script src="../_shared/hydrateSpace.js" charset="utf-8"></script>
+
 </head>
 
 <body>
+  <div id="contextual-assistance">
+    <button>Situate</button>
+    <button id="commit-code" onclick="commitChanges(changes)">Commit Changes</button>
+    <button onclick="saveCells(savedCells)">Save</button>
+    <button onclick="hydrateNotebook()">Hydrate</button>
+  </div>
 
   <div id="cells">
     <div class="cell">
@@ -16,3 +25,6 @@
 
 </body>
 <script src="../_shared/voice-commands.js" charset="utf-8"></script>
+<script>
+  let savedCells = [];
+</script>

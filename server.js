@@ -72,3 +72,11 @@ app.put('/spaces', (req, res) => {
   FS.copyFileSync('./spaces/_template/index.html', `./spaces/${req.body.name}/index.html`);
   res.end(JSON.stringify({}));
 });
+
+app.post('/spaces/:spaceName', (req, res) => {
+  console.log(`Saving ${req.params.spaceName}`);
+
+  FS.writeFileSync(`./spaces/${req.params.spaceName}/cells.json`, JSON.stringify(req.body));
+  
+  res.end(JSON.stringify({}));
+});
